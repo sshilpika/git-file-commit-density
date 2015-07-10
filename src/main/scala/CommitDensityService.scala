@@ -90,7 +90,7 @@ trait CommitDensityService extends HttpService{
         })
         val totalMillis = result.foldLeft(0L:Long){(l,z) => l+z._1}
           val finalResult = (result.map(z => z._1*z._2).sum)/totalMillis
-          lis1.toString+" Final Result = "+(finalResult)+"LOC"
+          "(Date, LOC) = "+lis1.toString+"\nFinal Result = "+(finalResult.toDouble/1000)+" KLOC"
       }
 
         )})
