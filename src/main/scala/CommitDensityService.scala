@@ -82,6 +82,7 @@ trait CommitDensityService extends HttpService{
         println(lis2)
         val lis3 = lis1.zip(lis2)
         println(lis3+"lis3")
+
         val result = lis3.map(c => {
 
           (ChronoUnit.MILLIS.between(c._1._1,c._2._1),c._1._2)
@@ -89,7 +90,7 @@ trait CommitDensityService extends HttpService{
         })
         val totalMillis = result.foldLeft(0L:Long){(l,z) => l+z._1}
           val finalResult = (result.map(z => z._1*z._2).sum)/totalMillis
-          result.toString+" Final Result = "+(finalResult/1000)+"LOC"
+          lis1.toString+" Final Result = "+(finalResult)+"LOC"
       }
 
         )})
